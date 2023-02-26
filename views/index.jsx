@@ -1,4 +1,5 @@
 const React = require('react')
+const bread_router = require('../controllers/breads_controller')
 const Default = require('./layouts/Default')
 
 function Index ({breads, title})  {
@@ -11,10 +12,10 @@ function Index ({breads, title})  {
 
             <ul>
                 {
-                    breads.map((bread, index) => {
+                    breads.map((bread,_id) => {
                         return (
-                            <li key={index}> 
-                                <a href={`/breads/${index}`}>
+                            <li key={bread._id}> 
+                                <a href={`/breads/${bread._id}`}>
                                     {bread.name}
                                 </a>
                              </li>
